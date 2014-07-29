@@ -36,6 +36,11 @@
   (define-key inf-ruby-mode-map (kbd "TAB") 'auto-complete))
 
 
+;;; Spacing
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (setq evil-shift-width 2)))
+(require 'ruby-end)
 
 ;;; Ruby compilation
 (require-package 'ruby-compilation)
@@ -46,6 +51,35 @@
     (define-key m [f7] 'ruby-compilation-this-test)
     (define-key m [f6] 'recompile)))
 
+
+(require 'compile)
+;; Find root directory by searching for Gemfile
+(defun* get-closest-gemfile-root (&optional (file "Gemfile"))
+  (let ((root (expand-file-name "/")))
+    (loop
+     for d = default-directory then (expand-file-name ".." d)
+     if (file-exists-p (expand-file-name file d))
+     return d
+     if (equal d root)
+     return nil)))
+
+(defun rspec-compile-file ()
+  (interactive)
+  (compile (format "cd %s;bundle exec rspec %s"
+                   (get-closest-gemfile-root)
+                   (file-relative-name (buffer-file-name) (get-closest-gemfile-root))) t))
+
+(defun rspec-compile-on-line ()
+  (interactive)
+  (compile (format "cd %s;bundle exec rspec %s -l %s"
+                   (get-closest-gemfile-root)
+                   (file-relative-name (buffer-file-name) (get-closest-gemfile-root))
+                   (line-number-at-pos)) t))
+
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-x t") 'rspec-compile-on-line)
+            (local-set-key (kbd "C-x T") 'rspec-compile-file)))
 
 
 ;;; Robe
