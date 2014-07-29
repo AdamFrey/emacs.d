@@ -22,11 +22,13 @@
  grep-scroll-output t
  indent-tabs-mode nil
  make-backup-files nil
+ auto-save-default nil
  mouse-yank-at-point t
  save-interprogram-paste-before-kill t
  scroll-preserve-screen-position 'always
  set-mark-command-repeat-pop t
  show-trailing-whitespace t
+ require-final-newline t
  tooltip-delay 1.5
  truncate-lines nil
  truncate-partial-width-windows nil
