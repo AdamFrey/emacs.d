@@ -354,5 +354,14 @@ With arg N, insert N newlines."
 (guide-key-mode 1)
 (diminish 'guide-key-mode)
 
+;;-------------------------------------------
+;; Hungry Delete
+;;-------------------------------------------
+(unless (fboundp 'hungry-delete-mode)
+  (package-install 'hungry-delete))
+
+(require 'hungry-delete)
+(global-hungry-delete-mode)
+
 
 (provide 'init-editing-utils)
