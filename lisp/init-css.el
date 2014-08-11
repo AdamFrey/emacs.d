@@ -61,5 +61,7 @@
 (autoload 'turn-on-css-eldoc "css-eldoc")
 (add-hook 'css-mode-hook 'turn-on-css-eldoc)
 
+;;; Set css indentation default
+(setq css-indent-offset 2)
 
 (provide 'init-css)
