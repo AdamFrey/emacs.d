@@ -82,5 +82,15 @@
 (require-package 'git-messenger)
 (global-set-key (kbd "C-x v p") #'git-messenger:popup-message)
 
+
+;;; github
+
+(require-package 'yagist)
+(require-package 'github-browse-file)
+(require-package 'bug-reference-github)
+(add-hook 'prog-mode-hook 'bug-reference-prog-mode)
+
+;;; Shortcuts
+(global-set-key (kbd "C-c g s") 'magit-status)
 
 (provide 'init-git)
