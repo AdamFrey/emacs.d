@@ -169,6 +169,7 @@
 (global-set-key (kbd "C-c c e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-c c a") 'mc/edit-beginnings-of-lines)
 
+(setq mc/cmds-to-run-for-all '(hungry-delete-backward))
 
 ;; Train myself to use M-f and M-b instead
 (global-unset-key [M-left])
