@@ -91,6 +91,6 @@
 (add-hook 'prog-mode-hook 'bug-reference-prog-mode)
 
 ;;; Shortcuts
-(global-set-key (kbd "C-c g s") 'magit-status)
+(global-set-key (kbd "C-, g") 'magit-status)
 
 (provide 'init-git)
