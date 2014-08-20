@@ -23,6 +23,10 @@
 
 (define-abbrev-table 'change-log-mode-abbrev-table '())
 
+(define-abbrev-table 'cider-repl-mode-abbrev-table '())
+
+(define-abbrev-table 'clojure-mode-abbrev-table '())
+
 (define-abbrev-table 'coffee-mode-abbrev-table '())
 
 (define-abbrev-table 'comint-mode-abbrev-table '())
@@ -41,15 +45,19 @@
 
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
 
+(define-abbrev-table 'gfm-mode-abbrev-table '())
+
 (define-abbrev-table 'git-commit-mode-abbrev-table '())
 
 (define-abbrev-table 'git-rebase-mode-abbrev-table '())
 
 (define-abbrev-table 'global-abbrev-table
   '(
+    ("benfits" "benefits" nil 0)
     ("conqured" "conquered" nil 0)
     ("coventant" "covenant" nil 0)
     ("resolutoin" "resolution" nil 1)
+    ("worshipped" "worshiped" nil 0)
    ))
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
@@ -58,6 +66,10 @@
 
 (define-abbrev-table 'haskell-cabal-mode-abbrev-table '())
 
+(define-abbrev-table 'haskell-mode-abbrev-table '())
+
+(define-abbrev-table 'haskell-presentation-mode-abbrev-table '())
+
 (define-abbrev-table 'help-mode-abbrev-table '())
 
 (define-abbrev-table 'html-erb-mode-abbrev-table '())
@@ -65,6 +77,8 @@
 (define-abbrev-table 'html-mode-abbrev-table '())
 
 (define-abbrev-table 'idl-mode-abbrev-table '())
+
+(define-abbrev-table 'inferior-lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'java-mode-abbrev-table
   '(
@@ -77,6 +91,8 @@
 (define-abbrev-table 'json-mode-abbrev-table '())
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
+
+(define-abbrev-table 'literate-haskell-mode-abbrev-table '())
 
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
 
@@ -99,6 +115,10 @@
 (define-abbrev-table 'magit-status-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-wazzup-mode-abbrev-table '())
+
+(define-abbrev-table 'markdown-mode-abbrev-table '())
+
+(define-abbrev-table 'nrepl-connections-buffer-mode-abbrev-table '())
 
 (define-abbrev-table 'nxml-web-mode-abbrev-table '())
 
@@ -141,6 +161,8 @@
 (define-abbrev-table 'special-mode-abbrev-table '())
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
+
+(define-abbrev-table 'tar-mode-abbrev-table '())
 
 (define-abbrev-table 'term-mode-abbrev-table '())
 
