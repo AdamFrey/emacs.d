@@ -36,6 +36,8 @@
 (require-package 'scratch)
 (require-package 'mwe-log-commands)
 
+(require 'init-projectile)
+
 (require 'init-frame-hooks)
 (require 'init-xterm)
 (require 'init-themes)
@@ -44,6 +46,7 @@
 (require 'init-proxies)
 (require 'init-dired)
 (require 'init-isearch)
+(require 'init-grep)
 (require 'init-uniquify)
 (require 'init-ibuffer)
 (require 'init-flycheck)
@@ -64,8 +67,7 @@
 (require 'init-git)
 (require 'init-github)
 
-(require 'init-projectile)
-
+(require 'init-compile)
 (require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)

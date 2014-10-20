@@ -1,4 +1,6 @@
-/url/cache
+prelude
+projectile-bookmarks.eld
+projectile.cache/url/cache
 /.emacs.desktop
 /auto-save-list
 /.session
@@ -32,7 +34,4 @@ site-lisp/package/
 /emms/
 /.smex-items
 /image-dired/
-prelude
-projectile-bookmarks.eld
-projectile.cache
-lisp/init-evil.el
+/eshell

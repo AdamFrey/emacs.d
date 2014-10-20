@@ -1,8 +1,9 @@
 (require-package 'unfill)
-(require-package 'whole-line-or-region)
 
 (when (fboundp 'electric-pair-mode)
   (electric-pair-mode))
+(when (fboundp 'electric-indent-mode)
+  (electric-indent-mode))
 
 ;;----------------------------------------------------------------------------
 ;; Some basic preferences
@@ -14,12 +15,9 @@
  buffers-menu-max-size 30
  case-fold-search t
  column-number-mode t
- compilation-scroll-output t
  delete-selection-mode t
  ediff-split-window-function 'split-window-horizontally
  ediff-window-setup-function 'ediff-setup-windows-plain
- grep-highlight-matches t
- grep-scroll-output t
  indent-tabs-mode nil
  make-backup-files nil
  auto-save-default nil
@@ -33,9 +31,6 @@
  truncate-lines nil
  truncate-partial-width-windows nil
  visible-bell t)
-
-(when *is-a-mac*
-  (setq-default locate-command "mdfind"))
 
 (global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t
@@ -52,7 +47,7 @@
 
 ;; But don't show trailing whitespace in SQLi, inf-ruby etc.
 (dolist (hook '(special-mode-hook
-                eww-mode
+                eww-mode-hook
                 term-mode-hook
                 comint-mode-hook
                 compilation-mode-hook
@@ -64,17 +59,6 @@
 (require-package 'whitespace-cleanup-mode)
 (global-whitespace-cleanup-mode t)
 
-
-;;; Newline behaviour
-
-(global-set-key (kbd "RET") 'newline-and-indent)
-(defun sanityinc/newline-at-end-of-line ()
-  "Move to end of line, enter a newline, and reindent."
-  (interactive)
-  (move-end-of-line 1)
-  (newline-and-indent))
-
-(global-set-key (kbd "S-<return>") 'sanityinc/newline-at-end-of-line)
 
 
 
@@ -95,7 +79,7 @@
 
 
 (require-package 'highlight-symbol)
-(dolist (hook '(prog-mode-hook html-mode-hook))
+(dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
   (add-hook hook 'highlight-symbol-mode)
   (add-hook hook 'highlight-symbol-nav-mode))
 (eval-after-load 'highlight-symbol
@@ -106,6 +90,11 @@
 ;;----------------------------------------------------------------------------
 (autoload 'zap-up-to-char "misc" "Kill up to, but not including ARGth occurrence of CHAR.")
 (global-set-key (kbd "M-Z") 'zap-up-to-char)
+
+
+
+(require-package 'browse-kill-ring)
+
 
 ;;----------------------------------------------------------------------------
 ;; Don't disable narrowing commands
@@ -244,6 +233,7 @@
 (global-set-key [M-S-down] 'md/move-lines-down)
 
 (global-set-key (kbd "C-c p") 'md/duplicate-down)
+(global-set-key (kbd "C-c P") 'md/duplicate-up)
 
 ;;----------------------------------------------------------------------------
 ;; Fix backward-up-list to understand quotes, see http://bit.ly/h7mdIL
@@ -263,6 +253,7 @@
 ;;----------------------------------------------------------------------------
 ;; Cut/copy the current line if no region is active
 ;;----------------------------------------------------------------------------
+(require-package 'whole-line-or-region)
 (whole-line-or-region-mode t)
 (diminish 'whole-line-or-region-mode)
 (make-variable-buffer-local 'whole-line-or-region-mode)
