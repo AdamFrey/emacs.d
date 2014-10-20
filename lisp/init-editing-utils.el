@@ -364,5 +364,29 @@ With arg N, insert N newlines."
 (require 'hungry-delete)
 (global-hungry-delete-mode)
 
+;;-------------------------------------------
+;; Kill Whole lines
+;;-------------------------------------------
+
+(defmacro bol-with-prefix (function)
+  "Define a new function which calls FUNCTION.
+Except it moves to beginning of line before calling FUNCTION when
+called with a prefix argument. The FUNCTION still receives the
+prefix argument."
+  (let ((name (intern (format "endless/%s-BOL" function))))
+    `(progn
+       (defun ,name (p)
+         ,(format
+           "Call `%s', but move to BOL when called with a prefix argument."
+           function)
+         (interactive "P")
+         (when p
+           (forward-line 0))
+         (call-interactively ',function))
+       ',name)))
+
+(global-set-key [remap paredit-kill] (bol-with-prefix paredit-kill))
+(global-set-key [remap org-kill-line] (bol-with-prefix org-kill-line))
+(global-set-key [remap kill-line] (bol-with-prefix paredit-kill))
 
 (provide 'init-editing-utils)
