@@ -1,6 +1,7 @@
 prelude
 projectile-bookmarks.eld
 projectile.cache/url/cache
+projectile.cache
 /.emacs.desktop
 /auto-save-list
 /.session
