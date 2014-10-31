@@ -65,13 +65,13 @@
 
 (defun rspec-compile-file ()
   (interactive)
-  (compile (format "cd %s;bundle exec rspec %s"
+  (compile (format "cd %s;zeus rspec %s"
                    (get-closest-gemfile-root)
                    (file-relative-name (buffer-file-name) (get-closest-gemfile-root))) t))
 
 (defun rspec-compile-on-line ()
   (interactive)
-  (compile (format "cd %s;bundle exec rspec %s:%s"
+  (compile (format "cd %s;zeus rspec %s:%s"
                    (get-closest-gemfile-root)
                    (file-relative-name (buffer-file-name) (get-closest-gemfile-root))
                    (line-number-at-pos)) t))
