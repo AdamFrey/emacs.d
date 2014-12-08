@@ -1,4 +1,4 @@
-(require 'multi-term)
+(require-package 'multi-term)
 
 (setq multi-term-program "/bin/zsh")
 
