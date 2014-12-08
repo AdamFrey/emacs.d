@@ -366,6 +366,14 @@ With arg N, insert N newlines."
 (require 'hungry-delete)
 (global-hungry-delete-mode)
 
+
+;;-------------------------------------------
+;; Indentation
+;;-------------------------------------------
+
+;(require-package 'aggressive-indent)
+;(global-aggressive-indent-mode)
+
 ;;-------------------------------------------
 ;; Kill Whole lines
 ;;-------------------------------------------
