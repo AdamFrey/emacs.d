@@ -128,4 +128,8 @@
      (sqlite . t))))
 
 
+;; Org-trello
+(require-package 'org-trello)
+(custom-set-variables '(org-trello-files '("~/todo.org")))
+
 (provide 'init-org)
