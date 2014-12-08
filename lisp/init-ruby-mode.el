@@ -40,7 +40,7 @@
 (add-hook 'ruby-mode-hook
           (lambda ()
             (setq evil-shift-width 2)))
-(require 'ruby-end)
+(require-package 'ruby-end)
 
 ;;; Ruby compilation
 (require-package 'ruby-compilation)
