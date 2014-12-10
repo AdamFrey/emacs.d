@@ -130,6 +130,6 @@
 
 ;; Org-trello
 (require-package 'org-trello)
-(custom-set-variables '(org-trello-files '("~/todo.org")))
+(custom-set-variables '(org-trello-files '("~/todo/todo.org")))
 
 (provide 'init-org)
