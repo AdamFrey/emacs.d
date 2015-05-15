@@ -1,3 +1,6 @@
+/request
+/url
+ido.last
 prelude
 projectile-bookmarks.eld
 projectile.cache/url/cache
@@ -39,5 +42,3 @@ site-lisp/package/
 /.cask/
 /.sx/
 /org-clock-save.el
-/request
-/url
