@@ -39,3 +39,5 @@ site-lisp/package/
 /.cask/
 /.sx/
 /org-clock-save.el
+/request
+/url
