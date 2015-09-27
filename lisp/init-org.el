@@ -110,7 +110,7 @@
 (after-load 'org
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((R . t)
+   '(;;(R . t)
      (ditaa . t)
      (dot . t)
      (emacs-lisp . t)
