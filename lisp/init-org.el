@@ -8,6 +8,7 @@
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
+(define-key org-mode-map (kbd "C-,") nil)
 
 ;; Various preferences
 (setq org-log-done t
