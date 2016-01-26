@@ -1,6 +1,4 @@
-(color-theme-sanityinc-tomorrow-night)
-
-; http://endlessparentheses.com/ispell-and-abbrev-the-perfect-auto-correct.html
+;; http://endlessparentheses.com/ispell-and-abbrev-the-perfect-auto-correct.html
 (define-key ctl-x-map "\C-y" 'endless/ispell-word-then-abbrev)
 
 (defun endless/ispell-word-then-abbrev (p)
