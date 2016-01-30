@@ -6,11 +6,13 @@
 (require-package 'git-messenger) ;; Though see also vc-annotate's "n" & "p" bindings
 (require-package 'git-timemachine)
 
-
 (when (maybe-require-package 'magit)
   (setq-default
    magit-process-popup-time 10
    magit-diff-refine-hunk t
+   ;; ADAM NOTE: Being set in .custom.el
+   magit-refresh-status-buffer nil
+
    magit-completing-read-function 'magit-ido-completing-read)
 
   ;; Hint: customize `magit-repo-dirs' so that you can use C-u M-F12 to
@@ -18,6 +20,9 @@
   (global-set-key [(meta f12)] 'magit-status)
   (global-set-key (kbd "C-x g") 'magit-status)
   (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup))
+
+;; ADAM TODO: make this work in the require package block above
+(setq magit-revert-buffers 1)
 
 (after-load 'magit
   (define-key magit-status-mode-map (kbd "C-M-<up>") 'magit-section-up)
@@ -85,8 +90,5 @@
 (require-package 'github-browse-file)
 (require-package 'bug-reference-github)
 (add-hook 'prog-mode-hook 'bug-reference-prog-mode)
-
-;;; Shortcuts
-(global-set-key (kbd "C-, g") 'magit-status)
 
 (provide 'init-git)

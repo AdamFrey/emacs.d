@@ -68,9 +68,8 @@
 
 (require 'init-vc)
 (require 'init-darcs)
-(require 'init-git-next)
-;;(require 'init-git)
-;;(require 'init-github)
+(require 'init-git)
+(require 'init-github)
 
 (require 'init-compile)
 (require 'init-crontab)
