@@ -8,6 +8,8 @@
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
+(define-key global-map (kbd "C-c b") 'org-ido-switchb)
+
 (after-load 'org
   (define-key org-mode-map (kbd "C-,") nil))
 
@@ -21,7 +23,9 @@
       org-fast-tag-selection-single-key 'expert
       org-html-validation-link nil
       org-export-kill-product-buffer-when-displayed t
-      org-tags-column 80)
+      org-tags-column 80
+      org-directory "~/org"
+      org-mobile-directory "~/Dropbox/MobileOrg")
 
 
 ;; Lots of stuff from http://doc.norang.ca/org-mode.html
@@ -83,6 +87,8 @@ typical word processor."
 
 ;;(add-hook 'org-mode-hook 'buffer-face-mode)
 
+(setq org-agenda-files (quote ("~/org")))
+
 
 (setq org-support-shift-select t)
 
@@ -90,13 +96,13 @@ typical word processor."
 
 (global-set-key (kbd "C-c c") 'org-capture)
 
+(setq org-default-notes-file "~/org/refile.org")
+
 (setq org-capture-templates
       `(("t" "todo" entry (file "")  ; "" => org-default-notes-file
-         "* NEXT %?\n%U\n" :clock-resume t)
+         "* TODO %?\n%U\n" :clock-resume t)
         ("n" "note" entry (file "")
-         "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
-        ))
-
+         "* %? :NOTE:\n%U\n%a\n" :clock-resume t)))
 
 
 ;;; Refiling
@@ -141,6 +147,15 @@ typical word processor."
       (quote (("NEXT" :inherit warning)
               ("PROJECT" :inherit font-lock-string-face))))
 
+
+;;; Tags
+
+(setq org-tag-alist
+      '((:startgrouptag)
+        ("Computers")
+        (:grouptags)
+        ("Clojure" . ?c)
+        (:endgrouptag)))
 
 
 ;;; Agenda views
@@ -169,6 +184,13 @@ typical word processor."
         `(("N" "Notes" tags "NOTE"
            ((org-agenda-overriding-header "Notes")
             (org-tags-match-list-sublevels t)))
+
+          ("u" "Upcoming"
+           ((tags-todo "-Work")))
+
+          ("wu" "Work Todo"
+           ((tags-todo "+Work")))
+
           ("g" "GTD"
            ((agenda "" nil)
             (tags "INBOX"
