@@ -457,4 +457,10 @@ we're typing a directory name, kill forward until the next
 (global-set-key (kbd "M-k") #'endless/forward-kill-sexp-or-dir)
 (global-set-key (kbd "C-M-k") #'endless/backward-kill-sexp-or-dir)
 
+;;---------
+;; comments
+;;---------
+
+(global-set-key (kbd "C-c ;") 'comment-box)
+
 (provide 'init-editing-utils)
