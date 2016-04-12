@@ -14,6 +14,7 @@
   (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
   (add-hook 'cider-mode-hook 'ac-cider-setup)
   (after-load 'auto-complete
+    (add-to-list 'ac-modes 'cider-mode)
     (add-to-list 'ac-modes 'cider-repl-mode))
 
   (add-hook 'cider-repl-mode-hook 'set-auto-complete-as-completion-at-point-function)
