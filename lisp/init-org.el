@@ -25,8 +25,8 @@
       org-export-kill-product-buffer-when-displayed t
       org-tags-column 80
       org-directory "~/org"
-      org-mobile-directory "~/Dropbox/MobileOrg")
-
+      org-mobile-directory "~/Dropbox/Org"
+      org-mobile-files '("~/org"))
 
 ;; Lots of stuff from http://doc.norang.ca/org-mode.html
 
@@ -102,7 +102,9 @@ typical word processor."
       `(("t" "todo" entry (file "")  ; "" => org-default-notes-file
          "* TODO %?\n%U\n" :clock-resume t)
         ("n" "note" entry (file "")
-         "* %? :NOTE:\n%U\n%a\n" :clock-resume t)))
+         "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
+        ("b" "book" entry (file "")
+         "* TOREAD %?\n%U\n" :clock-resume t)))
 
 
 ;;; Refiling
@@ -140,22 +142,31 @@ typical word processor."
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
+              (sequence "TOREAD" "READING(!)" "|" "DONE(d!/!)")
               (sequence "PROJECT(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
               (sequence "WAITING(w@/!)" "HOLD(h)" "|" "CANCELLED(c@/!)"))))
 
 (setq org-todo-keyword-faces
       (quote (("NEXT" :inherit warning)
+              ("READING" :inherit warning)
               ("PROJECT" :inherit font-lock-string-face))))
+
+
+;;; Habits
+
+(after-load 'org
+ (add-to-list 'org-modules 'org-habit)
+ (require 'org-habit))
 
 
 ;;; Tags
 
-(setq org-tag-alist
-      '((:startgrouptag)
-        ("Computers")
-        (:grouptags)
-        ("Clojure" . ?c)
-        (:endgrouptag)))
+;; (setq org-tag-alist
+;;       '((:startgrouptag)
+;;         ("Computers")
+;;         (:grouptags)
+;;         ("Clojure" . ?c)
+;;         (:endgrouptag)))
 
 
 ;;; Agenda views
@@ -185,10 +196,10 @@ typical word processor."
            ((org-agenda-overriding-header "Notes")
             (org-tags-match-list-sublevels t)))
 
-          ("u" "Upcoming"
-           ((tags-todo "-Work")))
+          ("mt" "Main Todo"
+           ((tags-todo "+Main")))
 
-          ("wu" "Work Todo"
+          ("wt" "Work Todo"
            ((tags-todo "+Work")))
 
           ("g" "GTD"
