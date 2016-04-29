@@ -1,14 +1,16 @@
 (require 'init-clojure)
-(require-package 'emacs '(24))
 
-(require-package 'cider)
-(require-package 'ac-cider)
+(when (maybe-require-package 'cider)
+  (setq nrepl-popup-stacktraces nil)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; nrepl with Clojure
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (after-load 'cider
+    (add-hook 'cider-mode-hook 'eldoc-mode)
+    (add-hook 'cider-repl-mode-hook 'subword-mode)
+    (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
-(setq nrepl-popup-stacktraces nil)
+    ;; nrepl isn't based on comint
+    (add-hook 'cider-repl-mode-hook
+              (lambda () (setq show-trailing-whitespace nil))))
 
 (after-load 'cider
   (add-hook 'cider-repl-mode-hook 'ac-cider-setup)

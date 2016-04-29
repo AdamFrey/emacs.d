@@ -1,5 +1,4 @@
 ;; Use C-f during file selection to switch to regular find-file
-(require 'ido)
 (require-package 'ido-vertical-mode)
 (require-package 'flx-ido)
 (ido-mode t)
