@@ -13,6 +13,7 @@
   (add-hook 'clojure-mode-hook 'sanityinc/lisp-setup)
   (add-hook 'clojure-mode-hook 'subword-mode))
 
-(add-auto-mode 'clojure-mode "\\.boot\\'")
+(add-auto-mode 'clojure-mode "\\.boot\\'" "\\.pxi\\'")
+
 
 (provide 'init-clojure)
