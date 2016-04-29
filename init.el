@@ -65,6 +65,7 @@
 (require 'init-mmm)
 
 (require 'init-editing-utils)
+(require 'init-folding)
 
 (require 'init-vc)
 (require 'init-darcs)
