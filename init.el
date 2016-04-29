@@ -92,6 +92,7 @@
 (require 'init-rails)
 (require 'init-sql)
 (require 'init-rust)
+(require 'init-groovy)
 
 (require 'init-paredit)
 (require 'init-lisp)
