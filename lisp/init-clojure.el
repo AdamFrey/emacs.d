@@ -6,7 +6,8 @@
 
   (after-load 'clojure-mode
     (add-hook 'clojure-mode-hook 'sanityinc/lisp-setup)
-    (add-hook 'clojure-mode-hook 'subword-mode)))
+    (add-hook 'clojure-mode-hook 'subword-mode)
+    (add-hook 'clojure-mode-hook 'paredit-mode)))
 
 (add-auto-mode 'clojure-mode "\\.boot\\'" "\\.pxi\\'")
 
