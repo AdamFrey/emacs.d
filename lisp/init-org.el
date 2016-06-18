@@ -148,7 +148,7 @@ typical word processor."
       org-todo-repeat-to-state "NEXT")
 
 (setq org-todo-keyword-faces
-      (quote (("NEXT" :inherit warning)
+      (quote (("NEXT" :inherit message-header-newsgroups)
               ("READING" :inherit warning)
               ("PROJECT" :inherit font-lock-string-face))))
 
