@@ -24,9 +24,7 @@
       org-html-validation-link nil
       org-export-kill-product-buffer-when-displayed t
       org-tags-column 80
-      org-directory "~/org"
-      org-mobile-directory "~/Dropbox/Org"
-      org-mobile-files '("~/org"))
+      org-directory "~/Dropbox/org")
 
 ;; Lots of stuff from http://doc.norang.ca/org-mode.html
 
@@ -87,8 +85,7 @@ typical word processor."
 
 ;;(add-hook 'org-mode-hook 'buffer-face-mode)
 
-(setq org-agenda-files (quote ("~/org")))
-
+(setq org-agenda-files (quote ("~/Dropbox/org")))
 
 (setq org-support-shift-select t)
 
@@ -96,7 +93,7 @@ typical word processor."
 
 (global-set-key (kbd "C-c c") 'org-capture)
 
-(setq org-default-notes-file "~/org/refile.org")
+(setq org-default-notes-file "~/Dropbox/org/refile.org")
 
 (setq org-capture-templates
       `(("t" "todo" entry (file "")  ; "" => org-default-notes-file
