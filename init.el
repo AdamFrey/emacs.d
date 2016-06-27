@@ -49,8 +49,6 @@
 (require-package 'scratch)
 (require-package 'mwe-log-commands)
 
-(require 'init-projectile)
-
 (require 'init-frame-hooks)
 (require 'init-xterm)
 (require 'init-themes)
@@ -81,6 +79,8 @@
 (require 'init-darcs)
 (require 'init-git)
 (require 'init-github)
+
+(require 'init-projectile)
 
 (require 'init-compile)
 (require 'init-crontab)

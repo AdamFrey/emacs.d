@@ -103,10 +103,16 @@
 
 
 
+(require-package 'goto-gem)
+
+
+(require-package 'bundler)
+
+
 ;;; YAML
 
-(maybe-require-package 'yaml-mode)
-(add-auto-mode 'yaml-mode "\\.yml\\.erb\\'")
+(when (maybe-require-package 'yaml-mode)
+  (add-auto-mode 'yaml-mode "\\.yml\\.erb\\'"))
 
 
 

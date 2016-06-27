@@ -2,9 +2,6 @@
 /url
 ido.last
 prelude
-projectile-bookmarks.eld
-projectile.cache/url/cache
-projectile.cache
 /.emacs.desktop
 /auto-save-list
 /.session
@@ -47,3 +44,6 @@ site-lisp/package/
 /ido.last
 /recentf
 /viper
+/projectile-bookmarks.eld
+projectile.cache/url/cache
+projectile.cache
