@@ -10,6 +10,7 @@
     (add-hook 'clojure-mode-hook 'paredit-mode)))
 
 (add-auto-mode 'clojure-mode "\\.boot\\'" "\\.pxi\\'")
+(add-auto-mode 'clojurescript-mode "\\.cljs.hl\\'")
 
 ;;;;;;;;;;;;;;;;;;
 ;; clj-refactor ;;
