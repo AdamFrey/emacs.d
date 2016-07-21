@@ -79,6 +79,7 @@
 (require 'init-darcs)
 (require 'init-git)
 (require 'init-github)
+(require 'init-docker)
 
 (require 'init-projectile)
 
