@@ -12,6 +12,10 @@
 (add-auto-mode 'clojure-mode "\\.boot\\'" "\\.pxi\\'")
 (add-auto-mode 'clojurescript-mode "\\.cljs.hl\\'")
 
+(define-clojure-indent
+  (or 0)
+  (and 0))
+
 ;;;;;;;;;;;;;;;;;;
 ;; clj-refactor ;;
 ;;;;;;;;;;;;;;;;;;
