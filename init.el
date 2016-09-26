@@ -125,6 +125,8 @@
 (require 'init-ledger)
 
 (require 'init-multi-term)
+(require 'init-web)
+(require 'init-feed)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
