@@ -47,3 +47,4 @@ site-lisp/package/
 /projectile-bookmarks.eld
 projectile.cache/url/cache
 projectile.cache
+/anaconda-mode/
