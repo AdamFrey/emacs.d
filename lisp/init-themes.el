@@ -28,4 +28,8 @@
   (interactive)
   (color-theme-sanityinc-solarized-dark))
 
+;; Icons
+;; (require-package 'all-the-icons)
+;;(all-the-icons-icon-for-file "choice.js")
+
 (provide 'init-themes)
