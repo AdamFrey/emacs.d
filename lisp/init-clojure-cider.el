@@ -8,7 +8,9 @@
     (add-hook 'cider-repl-mode-hook 'subword-mode)
     (add-hook 'cider-repl-mode-hook 'paredit-mode)
     ;; nrepl isn't based on comint
-    (add-hook 'cider-repl-mode-hook 'sanityinc/no-trailing-whitespace)))
+    (add-hook 'cider-repl-mode-hook 'sanityinc/no-trailing-whitespace)
+
+    (define-key cider-mode-map (kbd "C-c C-d n") #'cider-browse-ns)))
 
 (setq cider-repl-use-pretty-printing t
       cider-repl-display-help-banner nil)
