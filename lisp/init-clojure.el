@@ -12,9 +12,7 @@
 (add-auto-mode 'clojure-mode "\\.boot\\'" "\\.pxi\\'")
 (add-auto-mode 'clojurescript-mode "\\.cljs.hl\\'")
 
-;; (define-clojure-indent
-;;   (or 0)
-;;   (and 0))
+
 
 ;;;;;;;;;;;;;;;;;;
 ;; clj-refactor ;;
@@ -26,7 +24,19 @@
   (setq clojure-defun-style-default-indent t)
   (clj-refactor-mode 1)
   (yas-minor-mode 1) ; for adding require/use/import
-  (cljr-add-keybindings-with-prefix "C-c C-r"))
+  (cljr-add-keybindings-with-prefix "C-c C-r")
+
+  (define-clojure-indent
+    (or 0)
+    (and 0)
+    (= 0)))
+
+(with-eval-after-load 'clj-refactor
+  (setq cljr-thread-all-but-last nil)
+  (define-key clj-refactor-map "\C-ctf" #'cljr-thread-first-all)
+  (define-key clj-refactor-map "\C-ctl" #'cljr-thread-last-all)
+  (define-key clj-refactor-map "\C-cu" #'cljr-unwind)
+  (define-key clj-refactor-map "\C-cU" #'cljr-unwind-all))
 
 (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
 
