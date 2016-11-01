@@ -17,7 +17,8 @@
                 twittering-mode-hook
                 minibuffer-setup-hook
                 elfeed-show-mode-hook
-                elfeed-search-mode-hook))
+                elfeed-search-mode-hook
+                eshell-mode-hook))
   (add-hook hook #'sanityinc/no-trailing-whitespace))
 
 
