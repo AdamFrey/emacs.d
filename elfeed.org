@@ -3,6 +3,7 @@
 :ID: elfeed
 :END:
 ** Computers                                                                    :computers:
+*** https://blogs.janestreet.com/author/yminsky/feed/
 *** http://www.tedunangst.com/flak/rss
 *** https://coreos.com/atom.xml
 *** http://taotetek.github.io/oldschool.systems//index.xml
@@ -155,6 +156,7 @@
 
 **** http://emacsredux.com/atom.xml
 **** http://planet.emacsen.org/atom.xml
+**** http://oremacs.com/atom.xml
 
 *** http://blog.fogus.me/feed/                                                  :mustread:
 
@@ -169,7 +171,7 @@
 
 *** http://fivethirtyeight.com/politics/feed/
 *** https://medium.com/feed/@matthewstoller                                   :mustread:
-*** http://jacobinmag.com/category/blogs/feed/
+*** https://www.jacobinmag.com/category/blogs/feed/
 *** https://medium.com/feed/@lowenaffchen
 *** http://fivethirtyeight.com/economics/feed/
 *** http://www.interfluidity.com/feed
