@@ -3,6 +3,7 @@
 :ID: elfeed
 :END:
 ** Computers                                                                    :computers:
+*** http://www.tedunangst.com/inks/rss
 *** https://blogs.janestreet.com/author/yminsky/feed/
 *** http://www.tedunangst.com/flak/rss
 *** https://coreos.com/atom.xml
