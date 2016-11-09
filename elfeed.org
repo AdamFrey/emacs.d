@@ -168,12 +168,12 @@
 
 **** http://pando.com/author/garybrecher/feed/                                :mustread:
 
+*** http://pressthink.org/feed/
 *** http://www.theatlantic.com/feed/author/ta-nehisi-coates/                  :mustread:
 
 *** http://fivethirtyeight.com/politics/feed/
 *** https://medium.com/feed/@matthewstoller                                   :mustread:
 *** https://www.jacobinmag.com/category/blogs/feed/
-*** https://medium.com/feed/@lowenaffchen
 *** http://fivethirtyeight.com/economics/feed/
 *** http://www.interfluidity.com/feed
 
