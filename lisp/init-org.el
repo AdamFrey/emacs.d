@@ -136,6 +136,9 @@ typical word processor."
 ;; Allow refile to create parent tasks with confirmation
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 
+;; Save all org buffers after a refile
+(advice-add 'org-refile :after 'org-save-all-org-buffers)
+
 
 ;;; To-do settings
 
