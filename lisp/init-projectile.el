@@ -5,9 +5,9 @@
   (after-load 'guide-key
     (add-to-list 'guide-key/guide-key-sequence "C-c p"))
 
-  ;; Shorter modeline
   (after-load 'projectile
     (setq-default
+     ;; Shorter modeline
      projectile-mode-line
      '(:eval
        (if (file-remote-p default-directory)
