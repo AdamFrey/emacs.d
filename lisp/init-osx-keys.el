@@ -3,9 +3,8 @@
   (setq mac-option-modifier 'none)
   (setq-default default-input-method "MacOSX")
   ;; Make mouse wheel / trackpad scrolling less jerky
-  (setq mouse-wheel-scroll-amount '(1
-                                    ((shift) . 5)
-                                    ((control))))
+  (setq mouse-wheel-scroll-amount '(2 ((shift) . 5) ((control))))
+  (setq mouse-wheel-progressive-speed nil)
   (dolist (multiple '("" "double-" "triple-"))
     (dolist (direction '("right" "left"))
       (global-set-key (read-kbd-macro (concat "<" multiple "wheel-" direction ">")) 'ignore)))
