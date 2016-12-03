@@ -15,6 +15,13 @@
 (setq cider-repl-use-pretty-printing t
       cider-repl-display-help-banner nil)
 
+(add-to-list 'package-archives
+             '("billpiel" . "http://billpiel.com/emacs-packages/") t)
+
+(package-initialize)
+
+(maybe-require-package 'sayid)
+
 ;; (after-load 'cider
 ;;   ;; (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
 ;;   ;; (add-hook 'cider-mode-hook 'ac-cider-setup)
