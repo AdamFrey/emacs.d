@@ -408,6 +408,21 @@ we're typing a directory name, kill forward until the next
 ;; comments
 ;;---------
 
-(global-set-key (kbd "C-c ;") 'comment-box)
+(defun comment-header (b e)
+  "Turns the current line into a comment header. Right now it
+only works for semicolons."
+  (interactive "r")
+  (let ((e (copy-marker e t)))
+    (goto-char b)
+    (insert-char ?\; 2)
+    (insert-char ? 1)
+    (end-of-line)
+    (insert-char ? 1)
+    (insert-char ?\;)
+    (insert-char ?\; (- fill-column (current-column)))
+    (goto-char e)
+    (set-marker e nil)))
+
+(global-set-key (kbd "C-c ;") 'comment-header)
 
 (provide 'init-editing-utils)
