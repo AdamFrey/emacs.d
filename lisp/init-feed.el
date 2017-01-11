@@ -5,21 +5,17 @@
 
 (global-set-key (kbd "C-x w") 'elfeed)
 
+(defun set-feed-font ()
+  "Set feed-show buffer font"
+  (interactive)
+  (setq buffer-face-mode-face '(:height 170 :width semi-condensed))
+  (buffer-face-mode))
+
 (defun my-elfeed-show-mode-hook ()
-  ;; TODO dynamically set margin by subtracting buffer width and
-  ;; desired number of columns
-  ;; (setq left-margin-width 20)
-  ;; (setq right-margin-width 20)
   (toggle-read-only 1)
-  ;;(setq buffer-read-only 'f)
-  ;; (mark-whole-buffer)
-  ;; (fill-region)
-  ;;(setq buffer-read-only 't)
-  )
+  (set-feed-font))
 
 (add-hook 'elfeed-show-mode-hook 'my-elfeed-show-mode-hook)
 ;;(add-hook 'elfeed-show-mode-hook 'turn-on-auto-fill)
-
-
 
 (provide 'init-feed)
