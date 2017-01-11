@@ -1,3 +1,5 @@
+(require 'comint)
+
 (defun comint-clear-buffer ()
   (interactive)
   (let ((comint-buffer-maximum-size 0))
