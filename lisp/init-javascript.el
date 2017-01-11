@@ -2,6 +2,8 @@
 (maybe-require-package 'js2-mode)
 (maybe-require-package 'coffee-mode)
 
+(eval-when-compile (require 'cl))
+
 (defcustom preferred-javascript-mode
   (first (remove-if-not #'fboundp '(js2-mode js-mode)))
   "Javascript mode to use for .js files."
@@ -13,7 +15,6 @@
 
 ;; Need to first remove from list if present, since elpa adds entries too, which
 ;; may be in an arbitrary order
-(eval-when-compile (require 'cl))
 (setq auto-mode-alist (cons `("\\.\\(js\\|es6\\)\\(\\.erb\\)?\\'" . ,preferred-javascript-mode)
                             (loop for entry in auto-mode-alist
                                   unless (eq preferred-javascript-mode (cdr entry))
