@@ -3,6 +3,11 @@
 :ID: elfeed
 :END:
 ** Computers                                                                    :computers:
+*** http://joeduffyblog.com/feed.xml
+*** http://jmct.cc/atom.xml
+*** https://medium.com/feed/@ra
+*** http://inconvergent.net/atom.xml
+*** https://ericlippert.com/feed/
 *** http://www.tedunangst.com/inks/rss
 *** https://blogs.janestreet.com/author/yminsky/feed/
 *** http://www.tedunangst.com/flak/rss
