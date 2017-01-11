@@ -103,7 +103,11 @@ typical word processor."
         ("n" "note" entry (file "")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
         ("b" "book" entry (file "")
-         "* TOREAD %?\n%U\n" :clock-resume t)))
+         "* TOREAD %?\n%U\n" :clock-resume t)
+        ("j" "Journal Entry"
+         entry (file+datetree "~/Dropbox/org/journal.org")
+         "* %?"
+         :empty-lines 1)))
 
 
 ;;; Refiling
