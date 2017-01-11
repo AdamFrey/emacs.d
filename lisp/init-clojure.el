@@ -29,7 +29,12 @@
   (define-clojure-indent
     (or 0)
     (and 0)
-    (= 0)))
+    (= 0)
+    (not= 0)
+    (+ 0)
+    (- 0)
+    (* 0)
+    (/ 0)))
 
 (with-eval-after-load 'clj-refactor
   (setq cljr-thread-all-but-last nil)
@@ -41,6 +46,8 @@
 
   (add-to-list 'cljr-magic-require-namespaces
                '("d"  . "datomic.api"))
+  (add-to-list 'cljr-magic-require-namespaces
+               '("d"  . "datascript.core"))
   (add-to-list 'cljr-magic-require-namespaces
                '("pp"  . "clojure.pprint"))
 
