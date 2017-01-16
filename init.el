@@ -120,6 +120,9 @@
   (require 'init-clojure-cider))
 (require 'init-common-lisp)
 
+(require 'sdcv-mode)
+(require 'init-dict)
+
 (when *spell-check-support-enabled*
   (require 'init-spelling))
 
